@@ -104,6 +104,7 @@ def any_message(bot, update):
     for st in resp_string:
         bot.sendMessage(update.message.chat_id, text=st)
 
+
 def main():
     # Create the EventHandler and pass it your bot's token.
     updater = Updater(TOKEN, workers=10)
