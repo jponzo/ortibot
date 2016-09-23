@@ -98,7 +98,7 @@ def any_message(bot, update):
         #jewvengers_pic="http://s21.postimg.org/4a41cotx3/maxresdefault_3.jpg"
         #bot.sendPhoto(update.message.chat_id, photo=str(jewvengers_pic))
     else:
-    	#resp_string = random.choice(resp)
+    	resp_string.append(random.choice(resp))
 	pass
     logger.info("[ortibot]: %s" % resp_string)
 
