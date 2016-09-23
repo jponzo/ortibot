@@ -95,7 +95,7 @@ def any_message(bot, update):
         resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
     elif "jew" in message.lower():
         resp_string.append("Solo los Jewvengers pueden salvarnos")
-        jewvengers_pic = ['https://i.ytimg.com/vi/4gCuXOwlnyg/maxresdefault.jpg']
+        jewvengers_pic = ['http://s21.postimg.org/4a41cotx3/maxresdefault_3.jpg']
         bot.sendPhoto(update.message.chat_id, photo=str(jewvengers_pic))
     else:
     	#resp_string = random.choice(resp)
