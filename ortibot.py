@@ -70,35 +70,36 @@ def any_message(bot, update):
 
     logger.info("[%s]: %s" % (sender_name, message))
  
-    resp_string = ""
+    resp_string = []
     resp = ['cerra el orto %s' % sender_name,'que boludo sos %s' % sender_name,'mierrrda vas a comer','%s, no te quiere ni el halcon de Velazquez' % sender_name, "siempre el mismo lame escrotos vos eh...", "ahh buee, labura cualquiera en Meli...", 'cerra el orto %s' % sender_name]
     if "max" in message.lower():
-    	resp_string = "God bless Max Tkach our savior"
+    	resp_string.append("God bless Max Tkach our savior")
     elif "sarg" in message.lower():
-        resp_string = "El gordo vaca debe estar en Wendys"
+        resp_string.append("El gordo vaca debe estar en Wendys")
     elif "pochi" in message.lower():
-        resp_string = "Pochi, necesito unos mocasines talle 46 en color caqui"
+        resp_string.append("Pochi, necesito unos mocasines talle 46 en color caqui")
     elif "cusa" in message.lower() or "juan" in sender_name.lower():
-        resp_string = "Cerra el orto, Cusa. Sos de Platense" 
+        resp_string.append("Cerra el orto, Cusa. Sos de Platense")
     elif "trolli" in message.lower() or "agustin" in sender_name.lower():
         lista=[1,2,'bashton',4,5]
         if random.choice(lista) == 'bashton':
-            resp_string = "Trolli este es tuyo??"
+            resp_string.append("Trolli este es tuyo??")
             bora_images=['http://img.ar.autos.cozot.com/pics/ar/2015/08/22/Vw-bora-chocado-el-la-trompa-General-Roca-20150822215257.jpg', 'http://imganuncios.mitula.net/vendo_volkswagen_bora_1_8t_full_con_cuero_2011_5520130462999686988.jpg', 'http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/9doAAOSw3mpXOJqo/$_20.jpg', 'http://www.diariohuarpe.com/wp-content/uploads/2014/05/Pol-AutoChocadoBoraHilux-27052014-640x375.jpg', 'http://www.noticiaspv.com/wp-content/uploads/2012/04/20120407_valle_2593.jpg']
             image=random.choice(bora_images)
             bot.sendPhoto(update.message.chat_id, photo=str(image))
     elif "beto" in message.lower() or "betun" in sender_name.lower():
-        resp_string = "ufff! todos con el culo contra la pared que llego Alberto"
+        resp_string.append("ufff! todos con el culo contra la pared que llego Alberto")
     elif "pablo" in sender_name.lower():
-        resp_string = "Gordo, no te hace caso ni el boludo de tu bot"
+        resp_string.append("Gordo, no te hace caso ni el boludo de tu bot")
     elif "dario" in sender_name.lower():
-        resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
+        resp_string.append("no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus")
     else:
     	#resp_string = random.choice(resp)
 	pass
     logger.info("[ortibot]: %s" % resp_string)
 
-    bot.sendMessage(update.message.chat_id, text=resp_string)
+    for st in resp_string:
+        bot.sendMessage(update.message.chat_id, text=st)
 
 def main():
     # Create the EventHandler and pass it your bot's token.
