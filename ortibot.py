@@ -83,7 +83,7 @@ def any_message(bot, update):
     elif "trolli" in message.lower() or "agustin" in sender_name.lower():
         resp_string = "Trolli la concha de tu madre"
         bora_images=['http://img.ar.autos.cozot.com/pics/ar/2015/08/22/Vw-bora-chocado-el-la-trompa-General-Roca-20150822215257.jpg', 'http://imganuncios.mitula.net/vendo_volkswagen_bora_1_8t_full_con_cuero_2011_5520130462999686988.jpg', 'http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/9doAAOSw3mpXOJqo/$_20.jpg', 'http://www.diariohuarpe.com/wp-content/uploads/2014/05/Pol-AutoChocadoBoraHilux-27052014-640x375.jpg', 'http://www.noticiaspv.com/wp-content/uploads/2012/04/20120407_valle_2593.jpg']
-				image=random.choice(bora_images)
+        image=random.choice(bora_images)
         bot.sendPhoto(update.message.chat_id, photo=str(image))
     elif "beto" in message.lower() or "betun" in sender_name.lower():
         resp_string = "ufff! todos con el culo contra la pared que llego Alberto"
