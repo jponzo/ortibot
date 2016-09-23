@@ -80,8 +80,8 @@ def any_message(bot, update):
         resp_string = "Pochi, necesito unos mocasines talle 46 en color caqui"
     elif "cusa" in message.lower() or "juan" in sender_name.lower():
         resp_string = "Cerra el orto, Cusa. Sos de Platense" 
-    #elif "trolli" in message.lower() or "agustin" in sender_name.lower():
-    #    resp_string = "Che Agus, acabo de ver un bora igualito al tuyo abajo del 60. Donde lo estacionaste?"
+    elif "trolli" in message.lower() or "agustin" in sender_name.lower():
+        resp_string = "Trolli la concha de tu madre"
     #    bot.sendPhoto(update.message.chat_id, photo="http://sintinta.com.ar/wp-content/uploads/2012/12/bora-chocado-en-av-cabrera1.jpg")
     elif "beto" in message.lower() or "betun" in sender_name.lower():
         resp_string = "ufff! todos con el culo contra la pared que llego Alberto"
