@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+## ORTIBOT v1.0. 
+
 import json
 import sys
 import random
