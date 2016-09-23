@@ -1,5 +1,5 @@
 # Ortibot
-Ortibot es tu mejor amigo BOT en Telegram.
+Ortibot es tu mejor amigo BOT en Telegram. Cuidalo
 
 Configuracion:
 
