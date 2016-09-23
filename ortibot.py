@@ -95,7 +95,6 @@ def any_message(bot, update):
         resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
     if "jew" in message.lower():
         resp_string.append("Solo los Jewvengers pueden salvarnos")
-        bot.sendPhoto(update.message.chat_id, photo='http://s21.postimg.org/4a41cotx3/maxresdefault_3.jpg')
     else:
     	resp_string.append(random.choice(resp))
     logger.info("[ortibot]: %s" % resp_string)
