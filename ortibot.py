@@ -102,8 +102,7 @@ def any_message(bot, update):
 	pass
     logger.info("[ortibot]: %s" % resp_string)
 
-    for st in resp_string:
-        bot.sendMessage(update.message.chat_id, text=st)
+    bot.sendMessage(update.message.chat_id, text=resp_string)
 
 def main():
     # Create the EventHandler and pass it your bot's token.
