@@ -1,3 +1,4 @@
 message.*
 *.pyc
 ortibot.yaml
+deploy.sh

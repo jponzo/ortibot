@@ -87,6 +87,8 @@ def any_message(bot, update):
         resp_string = "ufff! todos con el culo contra la pared que llego Alberto"
     elif "pablo" in sender_name.lower():
         resp_string = "Gordo, no te hace caso ni el boludo de tu bot"
+    elif "dario" in sender_name.lower():
+        resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
     else:
     	#resp_string = random.choice(resp)
 	pass
