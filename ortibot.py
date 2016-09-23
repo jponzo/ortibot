@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Example Bot to show some of the functionality of the library
-# This program is dedicated to the public domain under the CC0 license.
+
 import json
 import sys
 import random
@@ -110,3 +108,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
