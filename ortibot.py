@@ -94,7 +94,7 @@ def any_message(bot, update):
     elif "dario" in sender_name.lower():
         resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
     elif "jew" in in message.lower():
-        resp_string = "Solo los Jewvengers pueden salvarnos"
+        resp_string.append("Solo los Jewvengers pueden salvarnos")
         jewvengers_pic = ['https://i.ytimg.com/vi/4gCuXOwlnyg/maxresdefault.jpg']
         bot.sendPhoto(update.message.chat_id, photo=str(jewvengers_pic)
     else:
