@@ -25,6 +25,10 @@ from time import sleep
 import logging
 import os
 
+
+# My custom modules
+from modules.tu_vieja import TuVieja
+
 # Enable Logging
 logging.basicConfig(
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -69,6 +73,9 @@ def any_message(bot, update):
         message = update.message.text
 
     logger.info("[%s]: %s" % (sender_name, message))
+
+    # TODO: Remove all if statements and replace them with this class:
+    #resp = TuVieja().puteada(sender_name)
  
     resp_string = []
     resp = ['cerra el orto %s' % sender_name,'que boludo sos %s' % sender_name,'mierrrda vas a comer','%s, no te quiere ni el halcon de Velazquez' % sender_name, "siempre el mismo lame escrotos vos eh...", "ahh buee, labura cualquiera en Meli...", 'cerra el orto %s' % sender_name]
