@@ -99,7 +99,6 @@ def any_message(bot, update):
         #bot.sendPhoto(update.message.chat_id, photo=str(jewvengers_pic))
     else:
     	resp_string.append(random.choice(resp))
-	pass
     logger.info("[ortibot]: %s" % resp_string)
     for st in resp_string:
         bot.sendMessage(update.message.chat_id, text=st)
