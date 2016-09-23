@@ -73,7 +73,7 @@ def any_message(bot, update):
     resp_string = []
     resp = ['cerra el orto %s' % sender_name,'que boludo sos %s' % sender_name,'mierrrda vas a comer','%s, no te quiere ni el halcon de Velazquez' % sender_name, "siempre el mismo lame escrotos vos eh...", "ahh buee, labura cualquiera en Meli...", 'cerra el orto %s' % sender_name]
     if "max" in message.lower():
-    	resp_string.append("God bless Max Tkach our savior")
+        resp_string.append("God bless Max Tkach our savior")
     if "sarg" in message.lower():
         resp_string.append("El gordo vaca debe estar en Wendys")
     if "pochi" in message.lower():
@@ -98,6 +98,14 @@ def any_message(bot, update):
     else:
     	resp_string.append(random.choice(resp))
     logger.info("[ortibot]: %s" % resp_string)
+
+    time = time.time()
+    stringtime = datetime.datetime.fromtimestamp(time).strftime('%M')
+    if int(stringtime) % 5 == 0:
+       insultos=["vayanse a cagar!!", "cajetudos de mierda!!", "forros del orto", "caras de escrotooooooooo!!!", "que pedazo de pelotudos!!", "salames!!", "concha'e tu madre!!", "Son mas fieros que luz mala!!", "Hijos de un vagon de putas!!", "Como pueden ser tan boludosssssssss!??!!?", "Trolli, correte que aca estan laburando!", "Callate Ger!!!", "A ver si actualizas esta Raspberry de mierda Ponzo!!!", "Snow, trae la 9 y cagalos a tiros por favor...", "Che, Cusa sigue aca o se dio cuenta que era de Platense y la quedo?", "Sacale una fotito a esta SantiR!!! jajaja", "Vaffanculo Bambino!!", "Max te amo","ARRRRGGGGGGGG!!!", "Si no saben ni hablar...","Daaaale mulo gato puto!!", "Esperenme que voy... PUTOS!!!"]
+       insulto=random.choice(insultos)
+       resp_string = str(insulto)
+
     for st in resp_string:
         bot.sendMessage(update.message.chat_id, text=st)
 
