@@ -9,7 +9,7 @@ import random
 import yaml
 import func as f
 
-with open("ortibot.yaml", 'r') as stream:
+with open("./ortibot.yaml", 'r') as stream:
     try:
         config = yaml.load(stream)
 	print "[CONFIG]: %s" % config
