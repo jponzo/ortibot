@@ -102,8 +102,8 @@ def any_message(bot, update):
         resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
     if "jew" in message.lower():
         resp_string.append("Solo los Jewvengers pueden salvarnos")
-    else:
-    	resp_string.append(random.choice(resp))
+    #else:
+    	#resp_string.append(random.choice(resp))
     logger.info("[ortibot]: %s" % resp_string)
 
     for st in resp_string:
