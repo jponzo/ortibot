@@ -35,7 +35,7 @@ logging.basicConfig(
         level=logging.INFO)
 
 logger = logging.getLogger(__name__)
-handler = logging.FileHandler("/var/log/opsbot.log")  
+handler = logging.FileHandler("/var/log/ortibot.log")  
 logger.addHandler(handler)
 
 # We use this var to save the last chat id, so we can reply to it
@@ -46,6 +46,7 @@ def any_message(bot, update):
     global last_chat_id
     last_chat_id = update.message.chat_id
     sender_name = f.normalize_string(update.message.from_user['first_name'])
+    logger.info("New message: %s" % update.message)
 
     bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
 
