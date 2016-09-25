@@ -63,10 +63,12 @@ def getWeather(app_id, city):
             temp_max = str(request['main']['temp_max']).split(".")[0]
             humidity = str(request['main']['humidity'])
             if int(humidity) > 80:
-                    opinion = opinion + "Terrible la humedad que hay!"
+                    opinion = opinion + "Se me pegan los huevos con esta humedad del orto."
             if int(temperature) < 15:
-                    opinion = opinion + "Abrigate que hace frio"
-            response = "El estado del clima de hoy. %s. Ahora hace %s grados de temperatura y puede llegar a %s grados durante la tarde. La humedad es del %s porciento. %s" % (description, temperature, temp_max, humidity, opinion)
+                    opinion = opinion + "Que frio de mierda lpm."
+            if int(temperature) > 20:
+                    opinion = opinion + "Ideal para un birrin."
+            response = "%s. Ahora hace %s grados de temperatura y capaz llega a %s grados a la tarde. %s porciento de humedad. %s" % (description, temperature, temp_max, humidity, opinion)
         except:
             response = "No encuentro ese lugar"
         return response
