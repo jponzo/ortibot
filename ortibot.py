@@ -115,6 +115,8 @@ def any_message(bot, update):
     if random.choice(lista) == 'bashton' or "clima" in message.lower() or "ortibot" in message.lower():
       bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
       bot.sendMessage(update.message.chat_id, text=resp_string)
+    else:
+      logger.info("[ortibot]: A este gil ni le contesto")
 
 def main():
     # Create the EventHandler and pass it your bot's token.
