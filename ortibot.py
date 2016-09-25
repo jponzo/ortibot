@@ -111,7 +111,6 @@ def any_message(bot, update):
     lista=[1,2,'bashton',5,6]
     if random.choice(lista) == 'bashton' or "clima" in message.lower():
       bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
-      time.sleep(1)
       bot.sendMessage(update.message.chat_id, text=resp_string)
 
 def main():
