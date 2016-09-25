@@ -104,7 +104,7 @@ def any_message(bot, update):
         resp_string = "Solo los Jewvengers pueden salvarnos"
     if "clima" in message.lower():
         city = message.lower().split(" en ")[1].split("?")[0]
-        resp_string = getWeather(WEATHERID, city)
+        resp_string = f.getWeather(WEATHERID, city)
     else:
         resp_string = (random.choice(resp))
 
