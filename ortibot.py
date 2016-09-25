@@ -111,7 +111,7 @@ def any_message(bot, update):
     logger.info("[ortibot]: %s" % resp_string)
 
     lista=[1,2,'bashton']
-    if random.choice(lista) == 'bashton':
+    if random.choice(lista) == 'bashton' or "clima" in message.lower():
     	bot.sendMessage(update.message.chat_id, text=resp_string)
 
 def main():
