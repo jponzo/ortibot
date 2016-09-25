@@ -40,3 +40,30 @@ def Text2Speech(text):
 	from gtts import gTTS
 	tts = gTTS(text=text, lang="es-us")
 	tts.save('mostro_response.mp3')
+
+def wikipedear(target):
+    result = "No tengo idea"
+    try:
+        wikipedia.set_lang("es")
+        result = wikipedia.summary(target, sentences=1, auto_suggest=True, redirect=True)
+        print "Wikipedia result is: %s" % result
+    except Exception as e:
+        print "Error trying to search in wikipedia: %s" % e
+    return result
+
+def getWeather(id, city):
+        from urllib2 import urlopen
+        import simplejson
+        app_id = id
+        request = simplejson.load(urlopen('http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&APPID=%s&lang=es' % (city, app_id)))
+        opinion = ""
+        description = request['weather'][0]['description']
+        temperature = str(request['main']['temp']).split(".")[0]
+        temp_max = str(request['main']['temp_max']).split(".")[0]
+        humidity = str(request['main']['humidity'])
+        if int(humidity) > 80:
+                opinion = opinion + "Terrible la humedad que hay!"
+        if int(temperature) < 15:
+                opinion = opinion + "Abrigate que hace frio"
+        response = "El estado del clima de hoy. %s. Ahora hace %s grados de temperatura y puede llegar a %s grados durante la tarde. La humedad es del %s porciento. %s" % (description, temperature, temp_max, humidity, opinion)
+        return response

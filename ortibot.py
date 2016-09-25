@@ -17,6 +17,7 @@ with open("ortibot.yaml", 'r') as stream:
         print("ERROR: " + exc)
 
 TOKEN = config['token']
+WEATHERID = config['weatherid']
 
 from telegram.ext import Updater
 from telegram.ext.dispatcher import run_async
@@ -103,8 +104,11 @@ def any_message(bot, update):
         resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
     if "jew" in message.lower():
         resp_string.append("Solo los Jewvengers pueden salvarnos")
+    elif "clima" in message.lower():
+        city = message.lower().split(" en ")[1].split("?")[0]
+        resp_string = getWeather(WEATHERID, city)
     else:
-    	resp_string.append(random.choice(resp))
+        resp_string.append(random.choice(resp))
     logger.info("[ortibot]: %s" % resp_string)
 
     for st in resp_string:
