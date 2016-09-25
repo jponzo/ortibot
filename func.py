@@ -42,13 +42,13 @@ def Text2Speech(text):
 	tts.save('mostro_response.mp3')
 
 def wikipedear(target):
-    result = "No tengo idea"
     try:
         wikipedia.set_lang("es")
         result = wikipedia.summary(target, sentences=1, auto_suggest=True, redirect=True)
         print "Wikipedia result is: %s" % result
     except Exception as e:
         print "Error trying to search in wikipedia: %s" % e
+        result = "Ni puta idea"
     return result
 
 def getWeather(app_id, city):

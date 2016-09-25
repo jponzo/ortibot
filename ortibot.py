@@ -103,6 +103,9 @@ def any_message(bot, update):
     if "clima" in message.lower():
         city = message.lower().split(" en ")[1].split("?")[0]
         resp_string = f.getWeather(WEATHERID, city)
+    if "quien es" in message.lower() or "que es" in message.lower():
+        querystring = message.lower().split(" es ")[1].split("?")[0]
+        resp_string = f.wikipedear(querystring)
     else:
         resp_string = (random.choice(resp))
 
