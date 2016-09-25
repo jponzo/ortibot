@@ -56,7 +56,6 @@ def getWeather(app_id, city):
         import simplejson
         try:
             request = simplejson.load(urlopen('http://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&APPID=%s&lang=es' % (city, app_id)))
-            print request
             opinion = ""
             description = request['weather'][0]['description']
             temperature = str(request['main']['temp']).split(".")[0]

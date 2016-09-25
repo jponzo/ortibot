@@ -49,8 +49,6 @@ def any_message(bot, update):
     sender_name = f.normalize_string(update.message.from_user['first_name'])
     logger.info("New message: %s" % update.message)
 
-    bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
-
     # If Audio Message
     try:
         file_id = update.message.voice['file_id']
@@ -112,7 +110,9 @@ def any_message(bot, update):
 
     lista=[1,2,'bashton',5,6]
     if random.choice(lista) == 'bashton' or "clima" in message.lower():
-    	bot.sendMessage(update.message.chat_id, text=resp_string)
+      bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
+      time.sleep(1)
+      bot.sendMessage(update.message.chat_id, text=resp_string)
 
 def main():
     # Create the EventHandler and pass it your bot's token.
