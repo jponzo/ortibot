@@ -74,40 +74,39 @@ def any_message(bot, update):
 
     logger.info("[%s]: %s" % (sender_name, message))
 
-    # TODO: Remove all if statements and replace them with this class:
     #resp = TuVieja().puteada(sender_name)
- 
     resp_string = ""
-    resp = ['cerra el orto %s' % sender_name,'que boludo sos %s' % sender_name,'mierrrda vas a comer','%s, no te quiere ni el halcon de Velazquez' % sender_name, "siempre el mismo lame escrotos vos eh...", "ahh buee, labura cualquiera en Meli...", 'cerra el orto %s' % sender_name]
-    if "max" in message.lower():
-        resp_string = "God bless Max Tkach our savior"
-    if "sarg" in message.lower():
-        resp_string = "El gordo vaca debe estar en Wendys"
-    if "pochi" in message.lower():
-        resp_string = "Pochi, necesito unos mocasines talle 46 en color caqui"
-    if "cusa" in message.lower() or "juan" in sender_name.lower():
-        resp_string = "Cerra el orto, Cusa. Sos de Platense"
-    if "trolli" in message.lower() or "agustin" in sender_name.lower():
-        resp_string = "Trolli este es tuyo??"
-        bora_images=['http://img.ar.autos.cozot.com/pics/ar/2015/08/22/Vw-bora-chocado-el-la-trompa-General-Roca-20150822215257.jpg', 'http://imganuncios.mitula.net/vendo_volkswagen_bora_1_8t_full_con_cuero_2011_5520130462999686988.jpg', 'http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/9doAAOSw3mpXOJqo/$_20.jpg', 'http://www.diariohuarpe.com/wp-content/uploads/2014/05/Pol-AutoChocadoBoraHilux-27052014-640x375.jpg', 'http://www.noticiaspv.com/wp-content/uploads/2012/04/20120407_valle_2593.jpg']
-        image=random.choice(bora_images)
-        bot.sendPhoto(update.message.chat_id, photo=str(image))
-    if "beto" in message.lower() or "betun" in sender_name.lower():
-        resp_string = "ufff! todos con el culo contra la pared que llego Alberto"
-    if "pablo" in sender_name.lower():
-        resp_string = "Gordo, no te hace caso ni el boludo de tu bot"
-    if "dario" in sender_name.lower():
-        resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
-    if "jew" in message.lower():
-        resp_string = "Solo los Jewvengers pueden salvarnos"
+    #resp = ['cerra el orto %s' % sender_name,'que boludo sos %s' % sender_name,'mierrrda vas a comer','%s, no te quiere ni el halcon de Velazquez' % sender_name, "siempre el mismo lame escrotos vos eh...", "ahh buee, labura cualquiera en Meli...", 'cerra el orto %s' % sender_name]
+    #if "max" in message.lower():
+    #    resp_string = "God bless Max Tkach our savior"
+    #if "sarg" in message.lower():
+    #    resp_string = "El gordo vaca debe estar en Wendys"
+    #if "pochi" in message.lower():
+    #    resp_string = "Pochi, necesito unos mocasines talle 46 en color caqui"
+    #if "cusa" in message.lower() or "juan" in sender_name.lower():
+    #    resp_string = "Cerra el orto, Cusa. Sos de Platense"
+    #if "trolli" in message.lower() or "agustin" in sender_name.lower():
+    #    resp_string = "Trolli este es tuyo??"
+    #    bora_images=['http://img.ar.autos.cozot.com/pics/ar/2015/08/22/Vw-bora-chocado-el-la-trompa-General-Roca-20150822215257.jpg', 'http://imganuncios.mitula.net/vendo_volkswagen_bora_1_8t_full_con_cuero_2011_5520130462999686988.jpg', 'http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/9doAAOSw3mpXOJqo/$_20.jpg', 'http://www.diariohuarpe.com/wp-content/uploads/2014/05/Pol-AutoChocadoBoraHilux-27052014-640x375.jpg', 'http://www.noticiaspv.com/wp-content/uploads/2012/04/20120407_valle_2593.jpg']
+    #    image=random.choice(bora_images)
+    #    bot.sendPhoto(update.message.chat_id, photo=str(image))
+    #if "beto" in message.lower() or "betun" in sender_name.lower():
+    #    resp_string = "ufff! todos con el culo contra la pared que llego Alberto"
+    #if "pablo" in sender_name.lower():
+    #    resp_string = "Gordo, no te hace caso ni el boludo de tu bot"
+    #if "dario" in sender_name.lower():
+    #    resp_string = "no le hagan caso a ese pibe, tiene mas rivo encima que el loco Ventus"
+    #if "jew" in message.lower():
+    #    resp_string = "Solo los Jewvengers pueden salvarnos"
     if "clima" in message.lower():
         city = message.lower().split(" en ")[1].split("?")[0]
         resp_string = f.getWeather(WEATHERID, city)
-    if "quien es" in message.lower() or "que es" in message.lower():
+    elif "quien es" in message.lower() or "que es" in message.lower():
         querystring = message.lower().split(" es ")[1].split("?")[0]
         resp_string = f.wikipedear(querystring)
     else:
-        resp_string = (random.choice(resp))
+        resp_string = TuVieja().puteada(sender_name)
+        #resp_string = (random.choice(resp))
 
     lista=[1,2,'bashton',5,6]
     if random.choice(lista) == 'bashton' or "clima" in message.lower() or "ortibot" in message.lower():
