@@ -9,16 +9,25 @@ import random
 import yaml
 import func as f
 
+# Load config file
 with open("ortibot.yaml", 'r') as stream:
     try:
         config = yaml.load(stream)
-        print "[CONFIG]: %s" % config
+        logger.info("[CONFIG]: %s" % config)
+        TOKEN = config['token']
+        WEATHERID = config['weatherid']
     except yaml.YAMLError as exc:
-        print("ERROR: " + exc)
+        logger.error(exc)
+        sys.exit()
 
-TOKEN = config['token']
-WEATHERID = config['weatherid']
-BORA = config['bora']
+# Load messages
+with open("messages.yaml", 'r') as stream:
+    try:
+        messages = yaml.load(stream)
+        logger.info("[MESSAGES]: %s" % messages)
+        BORA = messages['bora']
+    except yaml.YAMLError as exc:
+        logger.error(exc)
 
 from telegram.ext import Updater
 from telegram.ext.dispatcher import run_async
