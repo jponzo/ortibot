@@ -1,15 +1,14 @@
 ---
-max: 'God bless Max Tkach our savior'
-sarg: 'Perdon por cargarte gordo, me encanta que comas asi'
-pochi: 'Pochi, que tipo emprendedor que sos, me encantan tus zapatos'
-cusa: 'Aguante el Calamar!'
-Agustin: 'Perdon Agus, no se que me paso. Vos sabes lo que yo te quiero?'
-Jona: 'Perdon Jona, me sobrepase'
-beto: 'Que trabado estas Betun, que bien te hace el gimnasio'
-Pablo: 'Sarg, cuando vamos a Wendys?'
-German: 'Que grande sos Carlin!'
-Fede: 'Genio Chiqui!'
-Dario: 'Que hermoso tenerte de vuelta, Snow. Como anda Oli?'
+Tkach: 'God bless Max Tkach our savior'
+Cabral: 'Perdon por cargarte gordo, me encanta que comas asi'
+Naranjo: 'Pochi, que tipo emprendedor que sos, me encantan tus zapatos'
+Cusa: 'Aguante el Calamar!'
+Trolli: 'Perdon Agus, no se que me paso. Vos sabes lo que yo te quiero?'
+Ponzo: 'Perdon Jona, me sobrepase'
+Miño: 'Que trabado estas Betun, que bien te hace el gimnasio'
+Robles: 'Que grande sos Carlin!'
+Falour: 'Genio Chiqui!'
+Nievas: 'Que hermoso tenerte de vuelta, Snow. Como anda Oli?'
 bora: ['http://img.ar.autos.cozot.com/pics/ar/2015/08/22/Vw-bora-chocado-el-la-trompa-General-Roca-20150822215257.jpg', 'http://imganuncios.mitula.net/vendo_volkswagen_bora_1_8t_full_con_cuero_2011_5520130462999686988.jpg', 'http://i.ebayimg.com/00/s/NjAwWDgwMA==/z/9doAAOSw3mpXOJqo/$_20.jpg', 'http://www.diariohuarpe.com/wp-content/uploads/2014/05/Pol-AutoChocadoBoraHilux-27052014-640x375.jpg', 'http://www.noticiaspv.com/wp-content/uploads/2012/04/20120407_valle_2593.jpg']
 
 default:

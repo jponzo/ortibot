@@ -55,6 +55,7 @@ def any_message(bot, update):
     global last_chat_id
     last_chat_id = update.message.chat_id
     sender_name = f.normalize_string(update.message.from_user['first_name'])
+    sender_lastname = f.normalize_string(update.message.from_user['last_name'])
     logger.debug("New message: %s" % update.message)
 
     # Audio Message
@@ -101,9 +102,9 @@ def any_message(bot, update):
     elif "boludo" in msg:
         mood = ortibot.setMood("messages")
         logger.info("Cambiando a modo %s" % mood)
-        resp_string = ortibot.puteada(sender_name)
+        resp_string = ortibot.puteada(sender_lastname)
     else:
-        resp_string = ortibot.puteada(sender_name)
+        resp_string = ortibot.puteada(sender_lastname)
 
     # Reply
     lista=[1,2,3,'bashton']
