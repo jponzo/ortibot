@@ -21,3 +21,4 @@ class TuVieja(object):
 
     def setMood(self, NewMood):
         self.mood = NewMood
+        return self.mood

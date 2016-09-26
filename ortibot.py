@@ -48,6 +48,8 @@ with open("messages.yaml", 'r') as stream:
 # We use this var to save the last chat id, so we can reply to it
 last_chat_id = 0
 
+ortibot = TuVieja()
+
 def any_message(bot, update):
     # Save last chat_id to use in reply handler
     global last_chat_id
@@ -82,7 +84,6 @@ def any_message(bot, update):
     logger.info("[%s]: %s" % (sender_name, message))
 
     # Think
-    ortibot = TuVieja()
     if "trolli" in msg:
         resp_string = "Trolli este es tuyo??"
         image=random.choice(BORA)
@@ -94,7 +95,9 @@ def any_message(bot, update):
         querystring = msg.split(" es ")[1].split("?")[0]
         resp_string = f.wikipedear(querystring)
     elif "calmate" in msg:
-        ortibot.setMood("calmado")
+        mood = ortibot.setMood("calmado")
+        logger.info("Cambiando a modo %s" % mood)
+        resp_string = ortibot.puteada(sender_name)
     else:
         resp_string = ortibot.puteada(sender_name)
 
