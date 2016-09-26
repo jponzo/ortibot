@@ -84,7 +84,7 @@ def any_message(bot, update):
     logger.info("[%s]: %s" % (sender_name, message))
 
     # Think
-    if "trolli" in msg:
+    if "bora" in msg:
         resp_string = "Trolli este es tuyo??"
         image=random.choice(BORA)
         bot.sendPhoto(update.message.chat_id, photo=str(image))
