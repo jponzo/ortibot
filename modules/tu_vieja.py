@@ -7,12 +7,17 @@ import os
 import random
 class TuVieja(object):
 
+    def __init__(self, mood="messages"):
+        self.mood = mood
+
     def puteada(self, subject):
         imHere = os.path.dirname(os.path.abspath(__file__))
-        with open("%s/../messages.yaml" % imHere, 'r') as ymlfile:
+        with open("%s/../" + mood + ".yaml" % imHere, 'r') as ymlfile:
             config = yaml.load(ymlfile)
         if subject in config:
             return config[subject]
-            
         else:
             return random.choice(config['default'])
+
+    def setMood(self, NewMood):
+        self.mood = NewMood

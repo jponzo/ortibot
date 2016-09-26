@@ -82,6 +82,7 @@ def any_message(bot, update):
     logger.info("[%s]: %s" % (sender_name, message))
 
     # Think
+    ortibot = TuVieja()
     if "trolli" in msg:
         resp_string = "Trolli este es tuyo??"
         image=random.choice(BORA)
@@ -92,8 +93,10 @@ def any_message(bot, update):
     elif "quien es" in msg or "que es" in msg:
         querystring = msg.split(" es ")[1].split("?")[0]
         resp_string = f.wikipedear(querystring)
+    elif "calmate" in msg:
+        ortibot.setMood("calmado")
     else:
-        resp_string = TuVieja().puteada(sender_name)
+        resp_string = ortibot.puteada(sender_name)
 
     # Reply
     lista=[1,'bashton']
