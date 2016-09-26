@@ -47,7 +47,7 @@ def any_message(bot, update):
     global last_chat_id
     last_chat_id = update.message.chat_id
     sender_name = f.normalize_string(update.message.from_user['first_name'])
-    logger.info("New message: %s" % update.message)
+    logger.debug("New message: %s" % update.message)
 
     # If Audio Message
     try:
