@@ -97,7 +97,7 @@ def any_message(bot, update):
     elif "calmate" in msg:
         mood = ortibot.setMood("calmado")
         logger.info("Cambiando a modo %s" % mood)
-        resp_string = ortibot.puteada(sender_name)
+        resp_string = ortibot.puteada("nn")
     elif "boludo" in msg:
         mood = ortibot.setMood("messages")
         logger.info("Cambiando a modo %s" % mood)
