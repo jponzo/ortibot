@@ -1,6 +1,7 @@
 #!/usr/bin/pypy
 # -*- coding: utf-8 -*-
 import unicodedata
+import wikipedia
 import time
 import os
 
