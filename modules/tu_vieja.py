@@ -12,7 +12,7 @@ class TuVieja(object):
 
     def puteada(self, subject):
         imHere = os.path.dirname(os.path.abspath(__file__))
-        with open("%s/../" + mood + ".yaml" % imHere, 'r') as ymlfile:
+        with open("%s/../" + self.mood + ".yaml" % imHere, 'r') as ymlfile:
             config = yaml.load(ymlfile)
         if subject in config:
             return config[subject]
