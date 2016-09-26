@@ -106,7 +106,7 @@ def any_message(bot, update):
         resp_string = ortibot.puteada(sender_name)
 
     # Reply
-    lista=[1,'bashton']
+    lista=['bashton']
     if random.choice(lista) == 'bashton' or "clima" in msg or "ortibot" in msg:
       bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
       bot.sendMessage(update.message.chat_id, text=resp_string)
