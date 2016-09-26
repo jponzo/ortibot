@@ -77,26 +77,27 @@ def any_message(bot, update):
                      update.message.chat_id,
                      update.message.text))
         message = update.message.text
+        msg = message.lower()
 
     logger.info("[%s]: %s" % (sender_name, message))
 
     # Think
-    if "trolli" in message.lower() or "agustin" in sender_name.lower():
+    if "trolli" in msg:
         resp_string = "Trolli este es tuyo??"
         image=random.choice(BORA)
         bot.sendPhoto(update.message.chat_id, photo=str(image))
-    elif "clima" in message.lower():
-        city = message.lower().split(" en ")[1].split("?")[0]
+    elif "clima" in msg:
+        city = msg.split(" en ")[1].split("?")[0]
         resp_string = f.getWeather(WEATHERID, city)
-    elif "quien es" in message.lower() or "que es" in message.lower():
-        querystring = message.lower().split(" es ")[1].split("?")[0]
+    elif "quien es" in msg or "que es" in msg:
+        querystring = msg.split(" es ")[1].split("?")[0]
         resp_string = f.wikipedear(querystring)
     else:
         resp_string = TuVieja().puteada(sender_name)
 
     # Reply
     lista=[1,'bashton']
-    if random.choice(lista) == 'bashton' or "clima" in message.lower() or "ortibot" in message.lower():
+    if random.choice(lista) == 'bashton' or "clima" in msg or "ortibot" in msg:
       bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
       bot.sendMessage(update.message.chat_id, text=resp_string)
       logger.info("[ortibot]: %s" % resp_string)
