@@ -8,6 +8,22 @@ import sys
 import random
 import yaml
 import func as f
+from telegram.ext import Updater
+from telegram.ext.dispatcher import run_async
+from telegram import ChatAction
+from time import sleep
+import logging
+import os
+from modules.tu_vieja import TuVieja
+
+# Enable Logging
+logging.basicConfig(
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        level=logging.INFO)
+
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler("/var/log/ortibot.log")
+logger.addHandler(handler)
 
 # Load config file
 with open("ortibot.yaml", 'r') as stream:
@@ -28,26 +44,6 @@ with open("messages.yaml", 'r') as stream:
         BORA = messages['bora']
     except yaml.YAMLError as exc:
         logger.error(exc)
-
-from telegram.ext import Updater
-from telegram.ext.dispatcher import run_async
-from telegram import ChatAction
-from time import sleep
-import logging
-import os
-
-
-# My custom modules
-from modules.tu_vieja import TuVieja
-
-# Enable Logging
-logging.basicConfig(
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        level=logging.INFO)
-
-logger = logging.getLogger(__name__)
-handler = logging.FileHandler("/var/log/ortibot.log")  
-logger.addHandler(handler)
 
 # We use this var to save the last chat id, so we can reply to it
 last_chat_id = 0
