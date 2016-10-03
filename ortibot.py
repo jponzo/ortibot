@@ -103,6 +103,10 @@ def any_message(bot, update):
         mood = ortibot.setMood("messages")
         logger.info("Cambiando a modo %s" % mood)
         resp_string = ortibot.puteada(sender_lastname)
+    elif "iorio" in msg or "filosofo" in msg:
+        mood = ortibot.setMood("iorio")
+        logger.info("Cambiando a modo %s" % mood)
+        resp_string = ortibot.puteada(sender_lastname)
     else:
         resp_string = ortibot.puteada(sender_lastname)
 
