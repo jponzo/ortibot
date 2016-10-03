@@ -116,9 +116,9 @@ def any_message(bot, update):
 
     # Reply
     lista=[1,2,3,'bashton']
-    if random.choice(lista) == 'bashton' or "clima" in msg or "ortibot" in msg:
+    if random.choice(lista) == 'bashton' or "clima" in msg or "orti" in msg:
       bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
-      bot.sendMessage(update.message.chat_id, text=resp_string)
+      bot.sendMessage(update.message.chat_id, text="%s, %s" % (sender_name, resp_string))
       logger.info("[ortibot]: %s" % resp_string)
     else:
       logger.info("[ortibot]: A este gil ni le contesto")
