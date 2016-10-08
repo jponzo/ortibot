@@ -111,6 +111,10 @@ def any_message(bot, update):
         mood = ortibot.setMood("cristiano")
         logger.info("Cambiando a modo %s" % mood)
         resp_string = ortibot.puteada(sender_lastname)
+    elif "jew" in msg or "facho" in msg:
+        mood = ortibot.setMood("facho")
+        logger.info("Cambiando a modo %s" % mood)
+        resp_string = ortibot.puteada(sender_lastname)
     else:
         resp_string = ortibot.puteada(sender_lastname)
 
