@@ -15,7 +15,7 @@ class TuVieja(object):
         with open("%s/../%s.yaml" % (imHere,self.mood), 'r') as ymlfile:
             config = yaml.load(ymlfile)
         if subject in config:
-            return random.choice(config['subject'])
+            return random.choice(config[subject])
         else:
             return random.choice(config['default'])
 
