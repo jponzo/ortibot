@@ -82,7 +82,7 @@ def any_message(bot, update):
         message = update.message.text
         msg = message.lower()
 
-    logger.info("[%s]: %s" % (sender_name, message))
+    logger.info("[%s %s]: %s" % (sender_name, sender_lastname, message))
 
     # Think
     if "bora" in msg:
