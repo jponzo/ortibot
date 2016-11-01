@@ -119,6 +119,10 @@ def any_message(bot, update):
         mood = ortibot.setMood("juje")
         logger.info("Cambiando a modo %s" % mood)
         resp_string = ortibot.puteada(sender_lastname)
+    elif "dolphin" in msg or "maxi" in msg:
+        mood = ortibot.setMood("maxi")
+        logger.info("Cambiando a modo %s" % mood)
+        resp_string = ortibot.puteada(sender_lastname)
     else:
         resp_string = ortibot.puteada(sender_lastname)
 
