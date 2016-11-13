@@ -128,10 +128,16 @@ def any_message(bot, update):
 
     # Reply
     lista=[1,2,3,'bashton']
-    if random.choice(lista) == 'bashton' or "clima" in msg or "orti" in msg:
+    roulette = random.choice(lista)
+    if roulette == 'bashton' or "clima" in msg or "orti" in msg:
       bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
       bot.sendMessage(update.message.chat_id, text="%s, %s" % (sender_name, resp_string))
       logger.info("[ortibot]: %s" % resp_string)
+    elif roulette == 2 :
+      logger.info("[ortibot]: le retruco todo a este puto")
+      resp_string = f.answerbyword(msg)
+      bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
+      bot.sendMessage(update.message.chat_id, text="%s, %s" % (sender_name, resp_string))
     else:
       logger.info("[ortibot]: A este gil ni le contesto")
 

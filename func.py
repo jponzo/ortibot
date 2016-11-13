@@ -72,3 +72,11 @@ def getWeather(app_id, city):
         except:
             response = "No encuentro ese lugar"
         return response
+
+def answerbyword(phrase):
+        list = phrase.split()
+        for word in list:
+             if len(word) > 3:
+                     key = word
+                     break
+        return key + " la chota." 
