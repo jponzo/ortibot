@@ -73,10 +73,17 @@ def getWeather(app_id, city):
             response = "No encuentro ese lugar"
         return response
 
-def answerbyword(phrase):
+def answerbyword(phrase): 
+        import random
+        complement_list = ["la chota", "tu vieja", "tu hermana", "las pelotas"]
+        complement = random.choice(complement_list)
         list = phrase.split()
+        key = ""
         for word in list:
              if len(word) > 3:
                      key = word
                      break
-        return key + " la chota." 
+        if not key:
+             key = random.choice(list)
+
+        return key + " " + complement + "."
