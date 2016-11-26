@@ -75,7 +75,7 @@ def getWeather(app_id, city):
 
 def answerbyword(phrase): 
         import random
-        complement_list = ["la chota", "tu vieja", "tu hermana", "las pelotas"]
+        complement_list = ["la chota", "tu vieja", "como tu hermana", "las pelotas","suelen decir los que gustan de lamer escrotos ajenos","decia yo cuando era puto","es la palabra que suelen usar los que gustan de frecuentar travestis"]
         complement = random.choice(complement_list)
         list = phrase.split()
         key = ""
@@ -85,5 +85,4 @@ def answerbyword(phrase):
                      break
         if not key:
              key = random.choice(list)
-
         return key + " " + complement + "."
