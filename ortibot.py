@@ -14,6 +14,7 @@ from telegram import ChatAction
 from time import sleep
 import logging
 import os
+import time
 from modules.tu_vieja import TuVieja
 
 # Enable Logging
@@ -126,7 +127,7 @@ def any_message(bot, update):
     elif "cerra el orto" in msg:
         segundos = msg.split(" por ")[1].split("segundos")[0]
         logger.info("[ortibot]: cierro el otro")
-        resp_string = "OK %s, cierro el otro por %s segundos. Ortiva!" % (sender_name, segundos)
+        resp_string = "Ortiva amigo de la gorra!, cierro el otro por %s segundos pero porque quiero." % segundos
         bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
         bot.sendMessage(update.message.chat_id, text="%s, %s" % (sender_name, resp_string))
         time.sleep(float(segundos))
