@@ -123,6 +123,14 @@ def any_message(bot, update):
         mood = ortibot.setMood("maxi")
         logger.info("Cambiando a modo %s" % mood)
         resp_string = ortibot.puteada(sender_lastname)
+    elif "cerra el orto" in msg:
+        segundos = msg.split(" por ")[1].split("segundos")[0]
+        logger.info("[ortibot]: cierro el otro")
+        resp_string = "OK %s, cierro el otro por %s segundos. Ortiva!" % (sender_name, segundos)
+        bot.sendChatAction(update.message.chat_id, action=ChatAction.TYPING)
+        bot.sendMessage(update.message.chat_id, text="%s, %s" % (sender_name, resp_string))
+        time.sleep(float(segundos))
+        
     else:
         resp_string = ortibot.puteada(sender_lastname)
 
